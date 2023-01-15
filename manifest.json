@@ -4,23 +4,28 @@
   "description": "Download conversation from ChatGPT in docx file.",
   "version": "0.0.1",
   "icons": {
-    "128": "icon_128.png"
+    "128": "images/icon_128.png"
   },
   "browser_action": {
-    "default_icon": "icon.png",
+    "default_icon": "images/icon.png",
     "default_popup": "index.html"
   },
   "permissions": [
     "activeTab"
   ],
+  "background": {
+    "scripts": ["background.js"]
+  },
   "content_scripts": [
     {
       "matches": [
         "https://chat.openai.com/*"
       ],
       "js": [
-        "plugins/jquery-3.6.3.min.js",
-        "index.js"
+        "plugins/jquery/jquery-3.6.3.min.js",
+        "plugins/bootstrap/popper.min.js",
+        "plugins/bootstrap/bootstrap.min.js",
+        "content.js"
       ]
     }
   ]

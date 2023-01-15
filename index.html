@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChatGPT conversation downloader</title>
+    <link rel="stylesheet" href="plugins/font-awesome/6.2.1-all.min.css">
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+    <section class="p-2">
+        <div class="d-flex justify-content-between">
+            <span>ChatGPT conversation downloader</span>
+            <span>
+                <a id="refresh_btn" class="cursor-pointer">
+                    <i class="fa-solid fa-download"></i>
+                </a>
+            </span>
+        </div>
+        <div id="doc_list" class="mt-2"></div>
+    </section>
 </body>
-<script src="index.js"></script>
+<script src="popup.js"></script>
+
 </html>

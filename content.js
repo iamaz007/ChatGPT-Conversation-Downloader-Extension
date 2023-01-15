@@ -1,15 +1,12 @@
-// if (document.readyState !== 'complete') {
-//     window.addEventListener('load', afterWindowLoaded);
-// } else {
-//     afterWindowLoaded();
-// }
-$(document).ready(function () {
-    getConversation();
-})
+chrome.runtime.onMessage.addListener((message) => {
+    if (message.type === "get_conversation") {
+        getConversation();
+    }
+});
 
 function getConversation() {
-    //Everything that needs to happen after the window is fully loaded.
-    var conversations = [];
+    var title = '';
+    var conversation = [];
     var conversation_object = {};
     $('div.w-full.border-b').each(function (index) {
         // console.log(index + ": " + $(this).find());
@@ -29,7 +26,22 @@ function getConversation() {
         conversation_object['message'] = message.html();
 
         // push to main array
-        conversations.push(conversation_object);
+        conversation.push(conversation_object);
     });
-    console.log(conversations)
+    // get title
+    $('#__next div.overflow-hidden div.dark nav div.flex-col div a').each(function (index) {
+        if (!$(this).hasClass('hover:bg-[#2A2B32]')) {
+            title = $(this).text();
+        }
+    });
+    // console.log(title)
+    // console.log(conversation)
+
+    // return data to popup.js
+    chrome.runtime.sendMessage({
+        'title': title,
+        'conversation': conversation,
+    }, function (response) {
+        console.log(response);
+    });
 }
