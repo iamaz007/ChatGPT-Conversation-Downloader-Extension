@@ -12,14 +12,14 @@ This browser extension allows users to easily download their ChatGPT conversatio
 - You will see a download button.
 - The extension will generate a doc file of the conversation, which can be saved to your computer.
 
-## Note
-This extension is intended for personal use and should not be used for any commercial purpose without permission from OpenAI.
-
 ## Built with
+- HTML
 - JavaScript
 
-## Extra plugins
+## Other plugins/libraries
+- Bootstrap
 - jQuery
+- Font-awesome
 
 ## Supported Browsers
 - Chrome
@@ -27,3 +27,6 @@ This extension is intended for personal use and should not be used for any comme
 
 ## Feedback
 If you have any issues or suggestions, please open an issue on the repository
+
+## Note
+This extension is intended for personal use and should not be used for any commercial purpose without permission from OpenAI.
